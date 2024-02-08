@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+The Basics - Followed docs, tried to find open source repos and tutorials
+Look at naming conventions for files
+Folder structures
+
+- Where to put files / data models etc
+
+Where do I put logic?
+
+- In Models or components
+
+How do I pass data between components
+
+- Global state?
+
+How does life cycles work?
+
+- useeffect etc in react
+
+Styling
+
+- Looked for variables in the figma file
+- Shred vs / not shared
+
+Started looking it creating components
+
+And then funcitonanlity
+
+- Calculate date
+- Persist
+- Responsive text
