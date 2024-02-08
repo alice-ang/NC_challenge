@@ -1,6 +1,18 @@
 <section>
   <form>
-    <input type="text" placeholder="Enter event title" />
-    <input type="date" placeholder="Enter event date" />
+    <input
+      type="text"
+      placeholder="Enter event title"
+      (ngModelChange)="setTitle($event)"
+      [(ngModel)]="newEvent.title"
+      name="title"
+    />
+    <input
+      type="date"
+      placeholder="Enter event date"
+      (ngModelChange)="setStartDate($event)"
+      name="start-date"
+      [(ngModel)]="newEvent.startDate"
+    />
   </form>
 </section>

@@ -1,6 +1,6 @@
 <main class="main">
-  <app-event [event]="initialEvent" />
-  <app-event-inputs />
+  <app-event [event]="currentEvent" />
+  <app-event-inputs (emitEvent)="setNewEvent($event)" />
 </main>
 
 <router-outlet />
