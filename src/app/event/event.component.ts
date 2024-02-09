@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { Event } from '../../shared/models/event';
 import { EventInterface } from '../../shared/interfaces';
+import { Store } from '../../shared/services/store';
 
 @Component({
   selector: 'app-event',
@@ -10,11 +11,15 @@ import { EventInterface } from '../../shared/interfaces';
   styleUrl: './event.component.scss',
 })
 export class EventComponent {
-  @Input() event!: EventInterface;
+  constructor(public store: Store) {}
+
+  get eventValue() {
+    return this.store.event;
+  }
 
   calculateTimeDifference() {
-    const inputDate = new Date(this.event.endDate);
-    const currentDate = new Date(this.event.startDate);
+    const inputDate = new Date(this.store.event().startDate);
+    const currentDate = new Date();
 
     const timeDifferenceInMilliseconds =
       inputDate.getTime() - currentDate.getTime();

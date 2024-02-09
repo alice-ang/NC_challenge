@@ -2,6 +2,9 @@
 
 $input-color: #757575;
 
+form {
+  flex-direction: column;
+}
 input {
   background-color: $grey;
   border-radius: 4px;

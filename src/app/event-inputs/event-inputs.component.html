@@ -5,17 +5,18 @@
       type="text"
       placeholder="Enter event title"
       (ngModelChange)="setTitle($event)"
-      [(ngModel)]="newEvent.title"
       name="title"
+      [(ngModel)]="store.event().title"
       placeholder="placeholder"
     />
 
     <input
       type="date"
+      z
       placeholder="Enter event date"
       (ngModelChange)="setStartDate($event)"
       name="start-date"
-      [(ngModel)]="newEvent.startDate"
+      [(ngModel)]="store.event().startDate"
     />
   </form>
 </section>
