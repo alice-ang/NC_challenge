@@ -1,0 +1,13 @@
+@import "../../styles.scss";
+
+$input-color: #757575;
+
+input {
+  background-color: $grey;
+  border-radius: 4px;
+  border: 1px solid $input-color;
+  padding: 12px 8px;
+}
+input:focus {
+  border-color: #ff0000 !important;
+}

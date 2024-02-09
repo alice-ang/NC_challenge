@@ -3,7 +3,10 @@
     {{ event.title }}
   </h1>
   <h2>
-    {{ event.startDate }}
+    {{ calculateTimeDifference().days }} days,
+    {{ calculateTimeDifference().hours }} h,
+    {{ calculateTimeDifference().days }} m,
+    {{ calculateTimeDifference().seconds }} s,
   </h2>
   <!-- <h2>{{ calculateTimeDifference().hours }}</h2> -->
 </div>
