@@ -1,12 +1,6 @@
 <div>
-  <h1>
-    {{ event.title }}
-  </h1>
+  <h1>Time to: {{ eventValue().title }}</h1>
   <h2>
-    {{ calculateTimeDifference().days }} days,
-    {{ calculateTimeDifference().hours }} h,
-    {{ calculateTimeDifference().days }} m,
-    {{ calculateTimeDifference().seconds }} s,
+    {{ countdownValue() }}
   </h2>
-  <!-- <h2>{{ calculateTimeDifference().hours }}</h2> -->
 </div>
