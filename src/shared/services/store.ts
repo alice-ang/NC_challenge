@@ -1,5 +1,5 @@
-import { Injectable, computed, effect, signal } from '@angular/core';
-import { EventInterface } from '../interfaces';
+import { Injectable, computed, effect, signal } from '@angular/core'
+import { EventInterface } from '../interfaces'
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +12,9 @@ export class Store {
   event = signal<EventInterface>({
     title: '',
     startDate: new Date(),
-  });
+  })
 
-  countdown = signal<string>('');
+  countdown = signal<string>('')
   constructor() {
     if (
       typeof localStorage !== 'undefined' &&
@@ -23,72 +23,77 @@ export class Store {
       this.event.set(
         JSON.parse(
           localStorage.getItem('savedEvent') ||
-            "{title: '',startDate: new Date(),}"
-        )
-      );
+            "{title: '',startDate: new Date(),}",
+        ),
+      )
     } else {
-      console.log('Web Storage is not supported in this environment.');
+      console.log('Web Storage is not supported in this environment.')
     }
 
     // Update local storage when event details changes
     effect(() => {
       if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('savedEvent', JSON.stringify(this.event()));
-        console.log('save to storafe');
+        localStorage.setItem('savedEvent', JSON.stringify(this.event()))
+        console.log('save to storafe')
       } else {
-        console.log('Web Storage is not supported in this environment.');
+        console.log('Web Storage is not supported in this environment.')
       }
-    });
+    })
 
     effect(() => {
       setInterval(() => {
-        this.countdownTimer();
-      }, 1000);
-    });
+        this.countdownTimer()
+      }, 1000)
+    })
   }
 
   setTitle(newTitle: string) {
+    console.log('set title')
+
     this.event.update((event) => ({
       title: newTitle,
       startDate: event.startDate,
-    }));
+    }))
   }
 
   setStartDate(newDate: Date) {
+    console.log('set date')
     this.event.update((event) => ({
       title: event.title,
       startDate: newDate,
-    }));
+    }))
   }
 
   countdownTimer = () => {
-    const inputDate = new Date(this.event().startDate);
-    const currentDate = new Date();
+    const inputDate = new Date(this.event().startDate)
+    const currentDate = new Date()
 
     // Avoid printing NaN
     if (!this.event().startDate) {
-      return;
+      return
     }
     const timeDifferenceInMilliseconds =
-      inputDate.getTime() - currentDate.getTime();
+      inputDate.getTime() - currentDate.getTime()
     const timeDifferenceInSeconds = Math.floor(
-      Math.abs(timeDifferenceInMilliseconds / 1000)
-    );
+      Math.abs(timeDifferenceInMilliseconds / 1000),
+    )
 
-    const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));
-    const hours = Math.floor((timeDifferenceInSeconds % (24 * 60 * 60)) / 3600);
-    const minutes = Math.floor((timeDifferenceInSeconds % 3600) / 60);
-    const seconds = Math.floor(timeDifferenceInSeconds % 60);
+    const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60))
+    const hours = Math.floor((timeDifferenceInSeconds % (24 * 60 * 60)) / 3600)
+    const minutes = Math.floor((timeDifferenceInSeconds % 3600) / 60)
+    const seconds = Math.floor(timeDifferenceInSeconds % 60)
 
     this.countdown.update(
       (countdown) =>
-        (countdown = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`)
-    );
-  };
-  get Event() {
-    return this.event;
+        (countdown = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`),
+    )
   }
+
+  get Event() {
+    return this.event
+  }
+
   get Countdown() {
-    return this.countdown;
+    return this.countdown
   }
 }

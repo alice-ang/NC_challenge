@@ -1,17 +1,10 @@
-@import "../styles.scss";
+@import '../styles.scss';
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex: 1 1 0%;
-  //   height: 844px;
-  //   width: 390px;
   text-align: center;
   min-height: 100vh;
   min-width: 100vw;
-  @media (orientation: landscape) {
-    // width: 844px;
-    // height: 390px;
-  }
 }

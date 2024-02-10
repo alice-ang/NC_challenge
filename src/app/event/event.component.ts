@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Store } from '../../shared/services/store';
+import { Component } from '@angular/core'
+import { Store } from '../../shared/services/store'
 
 @Component({
   selector: 'app-event',
@@ -12,10 +12,10 @@ export class EventComponent {
   constructor(public store: Store) {}
 
   get eventValue() {
-    return this.store.event;
+    return this.store.event
   }
 
   get countdownValue() {
-    return this.store.Countdown;
+    return this.store.Countdown
   }
 }

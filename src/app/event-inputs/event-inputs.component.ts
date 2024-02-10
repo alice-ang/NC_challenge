@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Event } from '../../shared/models/event';
-import { Store } from '../../shared/services/store';
+import { Component, EventEmitter, Output } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { Event } from '../../shared/models/event'
+import { Store } from '../../shared/services/store'
 
 @Component({
   selector: 'app-event-inputs',
@@ -14,9 +14,9 @@ export class EventInputsComponent {
   constructor(public store: Store) {}
 
   setTitle = (eventTitle: string) => {
-    this.store.setTitle(eventTitle);
-  };
+    this.store.setTitle(eventTitle)
+  }
   setStartDate = (eventDate: Date) => {
-    this.store.setStartDate(eventDate);
-  };
+    this.store.setStartDate(eventDate)
+  }
 }
