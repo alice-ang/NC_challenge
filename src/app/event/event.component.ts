@@ -1,6 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
-import { Event } from '../../shared/models/event';
-import { EventInterface } from '../../shared/interfaces';
+import { Component } from '@angular/core';
 import { Store } from '../../shared/services/store';
 
 @Component({

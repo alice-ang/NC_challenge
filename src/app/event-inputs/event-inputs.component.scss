@@ -3,6 +3,7 @@
 $input-color: #757575;
 
 form {
+  display: flex;
   flex-direction: column;
   label {
     font-size: 14px;
@@ -18,7 +19,4 @@ input {
   border: 1px solid $input-color;
   padding: 12px 8px;
   width: 278px;
-}
-input:focus {
-  border-color: #ff0000 !important;
 }

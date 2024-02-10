@@ -65,6 +65,10 @@ export class Store {
     const inputDate = new Date(this.event().startDate);
     const currentDate = new Date();
 
+    // Avoid printing NaN
+    if (!this.event().startDate) {
+      return;
+    }
     const timeDifferenceInMilliseconds =
       inputDate.getTime() - currentDate.getTime();
     const timeDifferenceInSeconds = Math.floor(

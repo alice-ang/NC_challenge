@@ -1,14 +1,17 @@
-@media (orientation: landscape) {
-  .main {
-    max-width: 844px;
-    max-height: 390px;
-    background-color: red;
-  }
-  @media (orientation: portrait) {
-    .main {
-      max-width: 390px;
-      max-height: 844px;
-      background-color: blue;
-    }
+@import "../styles.scss";
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 0%;
+  //   height: 844px;
+  //   width: 390px;
+  text-align: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  @media (orientation: landscape) {
+    // width: 844px;
+    // height: 390px;
   }
 }

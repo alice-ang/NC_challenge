@@ -3,8 +3,10 @@
 h1 {
   font-weight: 800;
   color: $purple;
+  font-size: var(--font-responsive);
 }
 
 h2 {
   font-weight: 400;
+  font-size: var(--font-responsive);
 }
