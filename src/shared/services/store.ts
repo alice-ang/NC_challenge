@@ -1,6 +1,5 @@
-import { Injectable, effect, signal } from '@angular/core';
+import { Injectable, computed, effect, signal } from '@angular/core';
 import { EventInterface } from '../interfaces';
-import { Event } from '../models/event';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +14,7 @@ export class Store {
     startDate: new Date(),
   });
 
+  countdown = signal<string>('');
   constructor() {
     if (
       typeof localStorage !== 'undefined' &&
@@ -40,34 +40,11 @@ export class Store {
       }
     });
 
-    // effect((onCleanup) => {
-    //   const timer = setInterval(() => {
-    //     const currentDate = new Date();
-    //     const timeDifferenceInMilliseconds =
-    //       this.event().startDate.getTime() - currentDate.getTime();
-    //     const timeDifferenceInSeconds = Math.floor(
-    //       Math.abs(timeDifferenceInMilliseconds / 1000)
-    //     );
-
-    //     const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));
-    //     const hours = Math.floor(
-    //       (timeDifferenceInSeconds % (24 * 60 * 60)) / 3600
-    //     );
-    //     const minutes = Math.floor((timeDifferenceInSeconds % 3600) / 60);
-    //     const seconds = Math.floor(timeDifferenceInSeconds % 60);
-
-    //     return {
-    //       days,
-    //       hours,
-    //       minutes,
-    //       seconds,
-    //     };
-    //   }, 1000);
-
-    //   onCleanup(() => {
-    //     clearTimeout(timer);
-    //   });
-    // });
+    effect(() => {
+      setInterval(() => {
+        this.countdownTimer();
+      }, 1000);
+    });
   }
 
   setTitle(newTitle: string) {
@@ -84,7 +61,30 @@ export class Store {
     }));
   }
 
+  countdownTimer = () => {
+    const inputDate = new Date(this.event().startDate);
+    const currentDate = new Date();
+
+    const timeDifferenceInMilliseconds =
+      inputDate.getTime() - currentDate.getTime();
+    const timeDifferenceInSeconds = Math.floor(
+      Math.abs(timeDifferenceInMilliseconds / 1000)
+    );
+
+    const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));
+    const hours = Math.floor((timeDifferenceInSeconds % (24 * 60 * 60)) / 3600);
+    const minutes = Math.floor((timeDifferenceInSeconds % 3600) / 60);
+    const seconds = Math.floor(timeDifferenceInSeconds % 60);
+
+    this.countdown.update(
+      (countdown) =>
+        (countdown = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`)
+    );
+  };
   get Event() {
     return this.event;
+  }
+  get Countdown() {
+    return this.countdown;
   }
 }

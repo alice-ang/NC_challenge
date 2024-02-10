@@ -17,26 +17,7 @@ export class EventComponent {
     return this.store.event;
   }
 
-  calculateTimeDifference() {
-    const inputDate = new Date(this.store.event().startDate);
-    const currentDate = new Date();
-
-    const timeDifferenceInMilliseconds =
-      inputDate.getTime() - currentDate.getTime();
-    const timeDifferenceInSeconds = Math.floor(
-      Math.abs(timeDifferenceInMilliseconds / 1000)
-    );
-
-    const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));
-    const hours = Math.floor((timeDifferenceInSeconds % (24 * 60 * 60)) / 3600);
-    const minutes = Math.floor((timeDifferenceInSeconds % 3600) / 60);
-    const seconds = Math.floor(timeDifferenceInSeconds % 60);
-
-    return {
-      days,
-      hours,
-      minutes,
-      seconds,
-    };
+  get countdownValue() {
+    return this.store.Countdown;
   }
 }
