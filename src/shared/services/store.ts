@@ -5,16 +5,13 @@ import { EventInterface } from '../interfaces'
   providedIn: 'root',
 })
 export class Store {
-  //   storedEvent: EventInterface = JSON.parse(
-  //     localStorage.getItem('savedEvent') || "{title: '',startDate: new Date(),}"
-  //   );
-
   event = signal<EventInterface>({
     title: '',
     startDate: new Date(),
   })
 
   countdown = signal<string>('')
+
   constructor() {
     if (
       typeof localStorage !== 'undefined' &&
@@ -48,8 +45,6 @@ export class Store {
   }
 
   setTitle(newTitle: string) {
-    console.log('set title')
-
     this.event.update((event) => ({
       title: newTitle,
       startDate: event.startDate,
@@ -57,7 +52,6 @@ export class Store {
   }
 
   setStartDate(newDate: Date) {
-    console.log('set date')
     this.event.update((event) => ({
       title: event.title,
       startDate: newDate,

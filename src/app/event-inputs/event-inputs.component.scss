@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 
-$input-border: #757575;
+$input: #757575;
 
 section {
   width: 100vw;
@@ -13,11 +13,44 @@ section {
       flex-direction: row;
     }
   }
+
   input {
     background-color: $grey;
+    width: 100%;
+    padding: 16px 16px;
     border-radius: 4px;
-    border: 1px solid $input-border;
-    padding: 12px 8px;
-    width: 278px;
+    border: 1px solid $input;
   }
+
+  label {
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 16px;
+    top: 8px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+  width: 278px;
+}
+
+.floating-input:focus {
+  outline: none;
+  border: 2px solid $purple;
+}
+
+.floating-input:focus ~ label,
+.floating-input:not(:placeholder-shown) ~ label {
+  top: -8px;
+  left: 8px;
+  font-size: 14px;
+  padding: 0px 8px;
+  background-color: $grey;
 }

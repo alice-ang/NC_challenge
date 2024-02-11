@@ -1,12 +1,11 @@
 @import '../../styles.scss';
 
 h1 {
-  font-weight: 800;
+  font-family: $font-open-sauce-bold;
   color: $purple;
   font-size: var(--font-responsive);
 }
 
 h2 {
-  font-weight: 400;
   font-size: var(--font-responsive);
 }

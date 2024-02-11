@@ -1,12 +1,12 @@
 <div>
   <h1
     [style.--font-responsive]="
-      (100 / (eventValue().title.length + 8)) * 1.8 + 'vw'
+      (100 / (eventValue().title.length + 8)) * 1.6 + 'vw'
     "
   >
     Time to {{ eventValue().title }}
   </h1>
-  <h2 [style.--font-responsive]="(100 / countdownValue().length) * 2.3 + 'vw'">
+  <h2 [style.--font-responsive]="(100 / countdownValue().length) * 1.6 + 'vw'">
     {{ countdownValue() }}
   </h2>
 </div>

@@ -1,10 +1,37 @@
+$font-open-sauce: 'OpenSauce', sans-serif;
+$font-open-sauce-bold: 'OpenSauceBold', sans-serif;
+
 $purple: #72035d;
 $grey: #f5f3f3;
+
+@font-face {
+  font-family: 'OpenSauce';
+  src: url('assets/OpenSauceSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14;
+}
+
+@font-face {
+  font-family: 'OpenSauceBold';
+  src: url('assets/OpenSauceSans-Bold.ttf') format('truetype');
+  font-weight: 800;
+}
 
 * {
   padding: 0;
   margin: 0;
 }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $grey;
+  font-family: $font-open-sauce;
 }
