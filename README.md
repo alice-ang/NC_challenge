@@ -1,58 +1,52 @@
-# NaturalCycles
+<div align="center">
+  <h1>NC Challenge</h1>
+   
+   
+<h4>
+    <a href="https://nc-challenge.vercel.app/">View Application</a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+</div>
 
-## Development server
+<br />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<!-- TechStack -->
 
-## Code scaffolding
+### :computer: Built using
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://angular.io/">Angular 17</a></li>
+    <li><a href="https://sass-lang.com/guide/">Sass</a></li>
+    <li><a href="https://angular.io/guide/signals">Angular Signals</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local Storage</a></li>
+  </ul>
 
-## Build
+<!-- Colors -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### :art: Colors
 
-## Running unit tests
+| Color  | Hex                                                              |
+| ------ | ---------------------------------------------------------------- |
+| Purple | ![#C19A5D](https://via.placeholder.com/10/72035d?text=+) #72035d |
+| Grey   | ![#A5836A](https://via.placeholder.com/10/f5f3f3?text=+) #f5f3f3 |
+| Input  | ![#F4EDE6](https://via.placeholder.com/10/757575?text=+) #757575 |
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<hr />
 
-## Running end-to-end tests
+### :rocket: Run Application
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Further help
+### :wrench: Improvements
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Write tests
+- Oprimise font size scaling soluton
+- Cancel interval when date is invalid
 
-The Basics - Followed docs, tried to find open source repos and tutorials
-Look at naming conventions for files
-Folder structures
+<!-- Screenshots -->
 
-- Where to put files / data models etc
+### :camera: Screenshots
 
-Where do I put logic?
-
-- In Models or components
-
-How do I pass data between components
-
-- Global state?
-
-How does life cycles work?
-
-- useeffect etc in react
-
-Styling
-
-- Looked for variables in the figma file
-- Shred vs / not shared
-
-Started looking it creating components
-
-And then funcitonanlity
-
-- Calculate date
-- Persist
-- Responsive text
+<div  
+  <img src="demo.gif" alt="screenshot" />
+</div>

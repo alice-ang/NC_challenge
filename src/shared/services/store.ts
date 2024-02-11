@@ -23,23 +23,18 @@ export class Store {
             "{title: '',startDate: new Date(),}",
         ),
       )
-    } else {
-      console.log('Web Storage is not supported in this environment.')
     }
 
     // Update local storage when event details changes
     effect(() => {
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('savedEvent', JSON.stringify(this.event()))
-        console.log('save to storafe')
-      } else {
-        console.log('Web Storage is not supported in this environment.')
       }
     })
 
     effect(() => {
       setInterval(() => {
-        this.countdownTimer()
+        this.countdownTimer(this.event().startDate)
       }, 1000)
     })
   }
@@ -58,14 +53,18 @@ export class Store {
     }))
   }
 
-  countdownTimer = () => {
-    const inputDate = new Date(this.event().startDate)
+  countdownTimer = (startDate: Date) => {
+    const inputDate = new Date(startDate)
     const currentDate = new Date()
 
-    // Avoid printing NaN
-    if (!this.event().startDate) {
+    // Avoid printing NaN and dates in the past
+    if (!this.event().startDate || inputDate < currentDate) {
+      this.countdown.update(
+        () => `Please choose a date from today onwards to proceed.`,
+      )
       return
     }
+
     const timeDifferenceInMilliseconds =
       inputDate.getTime() - currentDate.getTime()
     const timeDifferenceInSeconds = Math.floor(
@@ -81,6 +80,11 @@ export class Store {
       (countdown) =>
         (countdown = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`),
     )
+  }
+
+  // Calculate a view width value based on number of characters in text
+  calculateFontSize(textLength: number): string {
+    return (100 / textLength) * 1.6 + 'vw'
   }
 
   get Event() {
