@@ -1,10 +1,10 @@
-import { Injectable, computed, effect, signal } from '@angular/core'
+import { Injectable, effect, signal } from '@angular/core'
 import { EventInterface } from '../interfaces'
 
 @Injectable({
   providedIn: 'root',
 })
-export class Store {
+export class EventService {
   event = signal<EventInterface>({
     title: '',
     startDate: new Date(),
@@ -23,17 +23,12 @@ export class Store {
             "{title: '',startDate: new Date(),}",
         ),
       )
-    } else {
-      console.log('Web Storage is not supported in this environment.')
     }
 
     // Update local storage when event details changes
     effect(() => {
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('savedEvent', JSON.stringify(this.event()))
-        console.log('save to storafe')
-      } else {
-        console.log('Web Storage is not supported in this environment.')
       }
     })
 
@@ -62,10 +57,14 @@ export class Store {
     const inputDate = new Date(this.event().startDate)
     const currentDate = new Date()
 
-    // Avoid printing NaN
-    if (!this.event().startDate) {
+    // Avoid printing NaN and dates in the past
+    if (!this.event().startDate || inputDate < currentDate) {
+      this.countdown.update(
+        () => `Please choose a date from today onwards to proceed.`,
+      )
       return
     }
+
     const timeDifferenceInMilliseconds =
       inputDate.getTime() - currentDate.getTime()
     const timeDifferenceInSeconds = Math.floor(
@@ -79,7 +78,7 @@ export class Store {
 
     this.countdown.update(
       (countdown) =>
-        (countdown = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`),
+        (countdown = `${days} days, ${hours} h, ${minutes} m, ${seconds} s`),
     )
   }
 

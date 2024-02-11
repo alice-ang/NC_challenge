@@ -7,20 +7,20 @@ $grey: #f5f3f3;
 @font-face {
   font-family: 'OpenSauce';
   src: url('assets/OpenSauceSans-Regular.ttf') format('truetype');
-  font-weight: 400;
   font-style: normal;
-  font-size: 14;
+  font-weight: 800;
 }
 
 @font-face {
   font-family: 'OpenSauceBold';
   src: url('assets/OpenSauceSans-Bold.ttf') format('truetype');
-  font-weight: 800;
+  font-weight: 400;
 }
 
 * {
   padding: 0;
   margin: 0;
+  font-weight: 400;
 }
 
 *,

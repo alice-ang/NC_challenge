@@ -1,58 +1,54 @@
-# NaturalCycles
+<div align="center">
+  <h1>NC Challenge</h1>
+   
+<!-- Badges -->
+<p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/alice-ang/NC_challenge" alt="last update" />
+  </a>
 
-## Development server
+  <a href="https://github.com/alice-ang/NC_challenge/issues/">
+    <img src="https://img.shields.io/github/issues/alice-ang/NC_challenge" alt="open issues" />
+  </a>
+  <a href="https://github.com/alice-ang/NC_challenge/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/alice-ang/hNC_challenge" alt="license" />
+  </a>
+</p>
+   
+<h4>
+    <a href="https://nc-challenge.vercel.app/">View Test</a>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+</div>
 
-## Code scaffolding
+<br />
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- Screenshots -->
 
-## Build
+### :camera: Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<div align="center"> 
+  <img src="https://alice-ang.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj2bxdvs7%2Fproduction%2Ff11ea2601fb9040be1f4d3ca14be0a01805a291b-1542x1080.png&w=3840&q=75" alt="screenshot" />
+</div>
 
-## Running unit tests
+<!-- TechStack -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### :space_invader: Built using
 
-## Running end-to-end tests
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://angular.io/">Angular 17</a></li>
+    <li><a href="https://sass-lang.com/guide/">Sass</a></li>
+    <li><a href="https://angular.io/guide/signals">Angular Signals</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local Storage</a></li>
+  </ul>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- Colors -->
 
-## Further help
+### :art: Colors
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-The Basics - Followed docs, tried to find open source repos and tutorials
-Look at naming conventions for files
-Folder structures
-
-- Where to put files / data models etc
-
-Where do I put logic?
-
-- In Models or components
-
-How do I pass data between components
-
-- Global state?
-
-How does life cycles work?
-
-- useeffect etc in react
-
-Styling
-
-- Looked for variables in the figma file
-- Shred vs / not shared
-
-Started looking it creating components
-
-And then funcitonanlity
-
-- Calculate date
-- Persist
-- Responsive text
+| Color  | Hex                                                              |
+| ------ | ---------------------------------------------------------------- |
+| Purple | ![#C19A5D](https://via.placeholder.com/10/72035d?text=+) #72035d |
+| Grey   | ![#A5836A](https://via.placeholder.com/10/f5f3f3?text=+) #f5f3f3 |
+| Input  | ![#F4EDE6](https://via.placeholder.com/10/757575?text=+) #757575 |

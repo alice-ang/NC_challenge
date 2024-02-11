@@ -1,21 +1,26 @@
 import { Component } from '@angular/core'
-import { Store } from '../../shared/services/store'
+import { TextService } from '../../shared/services/text.service'
+import { EventService } from '../../shared/services/event.service'
 
 @Component({
   selector: 'app-event',
   standalone: true,
   imports: [],
+  providers: [EventService, TextService],
   templateUrl: './event.component.html',
   styleUrl: './event.component.scss',
 })
 export class EventComponent {
-  constructor(public store: Store) {}
+  constructor(
+    public eventService: EventService,
+    public textService: TextService,
+  ) {}
 
   get eventValue() {
-    return this.store.event
+    return this.eventService.Event
   }
 
   get countdownValue() {
-    return this.store.Countdown
+    return this.eventService.Countdown
   }
 }

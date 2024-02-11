@@ -8,7 +8,7 @@
         placeholder="Enter event title"
         (ngModelChange)="setTitle($event)"
         name="title"
-        [(ngModel)]="store.event().title"
+        [(ngModel)]="eventService.event().title"
         placeholder=""
       />
       <label>Title</label>
@@ -20,7 +20,7 @@
         type="date"
         (ngModelChange)="setStartDate($event)"
         name="start-date"
-        [(ngModel)]="store.event().startDate"
+        [(ngModel)]="eventService.event().startDate"
         placeholder=" "
       />
       <label>Date</label>
