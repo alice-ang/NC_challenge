@@ -1,21 +1,29 @@
 <section>
   <form>
-    <input
-      id="title"
-      type="text"
-      placeholder="Enter event title"
-      (ngModelChange)="setTitle($event)"
-      name="title"
-      [(ngModel)]="store.event().title"
-      placeholder="placeholder"
-    />
+    <div class="floating-label">
+      <input
+        class="floating-input"
+        id="title"
+        type="text"
+        placeholder="Enter event title"
+        (ngModelChange)="setTitle($event)"
+        name="title"
+        [(ngModel)]="store.event().title"
+        placeholder=""
+      />
+      <label>Title</label>
+    </div>
 
-    <input
-      type="date"
-      placeholder="Enter event date"
-      (ngModelChange)="setStartDate($event)"
-      name="start-date"
-      [(ngModel)]="store.event().startDate"
-    />
+    <div class="floating-label">
+      <input
+        class="floating-input"
+        type="date"
+        (ngModelChange)="setStartDate($event)"
+        name="start-date"
+        [(ngModel)]="store.event().startDate"
+        placeholder=" "
+      />
+      <label>Date</label>
+    </div>
   </form>
 </section>
