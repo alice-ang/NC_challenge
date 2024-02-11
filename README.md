@@ -40,13 +40,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 ### :wrench: Improvements
 
 - Write tests
-- Oprimise font size scaling soluton
+- Optimise font size scaling solution
 - Cancel interval when date is invalid
 
 <!-- Screenshots -->
 
 ### :camera: Screenshots
 
-<div  
-  <img src="demo.gif" alt="screenshot" />
+<div>
+  <img src="demo.gif" alt="screenshot" >
 </div>
