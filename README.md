@@ -1,39 +1,17 @@
 <div align="center">
   <h1>NC Challenge</h1>
    
-<!-- Badges -->
-<p>
-
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/alice-ang/NC_challenge" alt="last update" />
-  </a>
-
-  <a href="https://github.com/alice-ang/NC_challenge/issues/">
-    <img src="https://img.shields.io/github/issues/alice-ang/NC_challenge" alt="open issues" />
-  </a>
-  <a href="https://github.com/alice-ang/NC_challenge/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/alice-ang/hNC_challenge" alt="license" />
-  </a>
-</p>
    
 <h4>
-    <a href="https://nc-challenge.vercel.app/">View Test</a>
+    <a href="https://nc-challenge.vercel.app/">View Application</a>
 
 </div>
 
 <br />
 
-<!-- Screenshots -->
-
-### :camera: Screenshots
-
-<div align="center"> 
-  <img src="https://alice-ang.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj2bxdvs7%2Fproduction%2Ff11ea2601fb9040be1f4d3ca14be0a01805a291b-1542x1080.png&w=3840&q=75" alt="screenshot" />
-</div>
-
 <!-- TechStack -->
 
-### :space_invader: Built using
+### :computer: Built using
 
   <ul>
     <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
@@ -52,3 +30,22 @@
 | Purple | ![#C19A5D](https://via.placeholder.com/10/72035d?text=+) #72035d |
 | Grey   | ![#A5836A](https://via.placeholder.com/10/f5f3f3?text=+) #f5f3f3 |
 | Input  | ![#F4EDE6](https://via.placeholder.com/10/757575?text=+) #757575 |
+
+<hr />
+
+### :rocket: Run Application
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+### :wrench: Improvements
+
+- Write tests
+- Oprimise font size scaling soluton
+
+<!-- Screenshots -->
+
+### :camera: Screenshots
+
+<div  
+  <img src="demo.gif" alt="screenshot" />
+</div>

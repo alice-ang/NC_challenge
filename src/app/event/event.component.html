@@ -4,7 +4,7 @@
       textService.calculateFontSize(eventValue().title.length)
     "
   >
-    Time to {{ eventValue().title }}
+    Time to {{ eventService.event().title }}
   </h1>
   <h2
     [style.--font-responsive]="
