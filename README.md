@@ -42,6 +42,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 - Write tests
 - Optimise font size scaling solution
 - Cancel interval when date is invalid
+- Loading indicator
 
 <!-- Screenshots -->
 
